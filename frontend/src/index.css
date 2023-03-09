@@ -1,0 +1,656 @@
+html {
+  margin: 0;
+}
+body {
+  margin: 0;
+  font-family: Georgia, 'Calisto MT', 'Cambria', 'Book Antiqua', 'Times New Roman', Times, serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(253, 253, 232);
+}
+
+/* Text Formatting */
+h1 {
+  margin-top: 0;
+  padding-top: 2%;
+  padding-bottom: 5%;
+  font-family: 'Grenze Gotisch';
+}
+h3 {
+  padding-bottom: 3%;
+  font-family: 'Grenze';
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+.text-bold {
+  font-weight: bold;
+}
+label {
+  display: inline-block;
+  font-weight: bold;
+}
+
+/* Content Formatting */
+.center {
+  text-align: center;
+}
+.centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.col-centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.content-container {
+  display: flex;
+}
+.column {
+  width: 100%;
+  margin-top: 5%;
+  padding-left: 0;
+  transition: padding 0.3s ease-out;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.page-heading {
+  text-align: center;
+  margin-bottom: 5%;
+}
+.page-title {
+  padding: 0;
+  margin: 0;
+  font-size: 50px;
+}
+
+
+/* Loading Spinner */
+.loadingSpinnerContainer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 5000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loadingSpinner {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 32px 0 #fff, -32px 0 #fff;
+  position: relative;
+  animation: flash 0.5s ease-out infinite alternate;
+}
+@keyframes flash {
+  0% {
+    background-color: #FFF2;
+    box-shadow: 32px 0 #FFF2, -32px 0 #FFF;
+  }
+  50% {
+    background-color: #FFF;
+    box-shadow: 32px 0 #FFF2, -32px 0 #FFF2;
+  }
+  100% {
+    background-color: #FFF2;
+    box-shadow: 32px 0 #FFF, -32px 0 #FFF2;
+  }
+}
+      
+
+/* ------------------ Menu CSS ------------------ */
+.nav {
+  width: 0;
+  min-width: 200px;
+  height: 100vh;
+  margin: 0;
+  left: -200px;
+  background-color:rgb(66, 146, 85);
+  box-sizing: border-box;
+  position: fixed;
+  border-right: 1px solid rgb(212, 179, 139);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  overflow: hidden;
+  transition: left 0.3s ease-out;
+  z-index: 1;
+}
+.navbar-toggler {
+  position: absolute;
+  padding-left: 0;
+  transition: padding 0.3s ease-out;
+}
+.toggle-btn {
+  width: 80px;
+  height: 60px;
+  background-color: transparent;
+  border: none;
+  z-index: -1;
+}
+
+.menu-box {
+  --mask: radial-gradient(40px at 40px 40px,#0000 98%,#000) -40px -40px;
+  -webkit-mask: var(--mask);
+          mask: var(--mask);
+  
+  height: 60%;
+  background-color: rgb(253, 253, 232);
+  margin : 0 6% 0 6%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.dark-line {
+  width: 100%;
+  height: 10px;
+  background-color: rgb(255, 208, 18);
+  border-top: 1px solid  rgb(243, 178, 97);
+  border-bottom: 1px solid rgb(243, 178, 97);
+}
+.light-line {
+  width: 100%;
+  height: 10px;
+  background-color: rgb(253, 253, 232);
+}
+.big-light-line {
+  width: 100%;
+  height: 50px;
+  background-color: rgb(253, 253, 232);
+  overflow: hidden;
+}
+.logo {
+  font-size: 35px;
+  text-align: center;
+  background-color: rgb(253, 253, 232);
+}
+.nav-list {
+  list-style: none;
+  text-align: center;
+  padding: 0;
+}
+.nav-list li {
+  padding-bottom: 45%;
+}
+.nav-list li:last-child {
+  padding-bottom: 0;
+}
+a {
+  text-decoration: none;
+  font-size: 22px;
+  font-family: 'Grenze';
+  color: black;
+}
+a:hover {
+  color: rgb(255, 179, 2);
+}
+
+/* ----------------- Homepage ----------------- */
+.homepage-heading {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.home-title {
+  font-size: 60px;
+  padding-bottom: 10%;
+}
+.libraryImg {
+  max-width: 700px;
+  height: auto;
+  padding-bottom: 10%;
+}
+.home {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 3%;
+  background-color: rgb(255, 255, 227);
+  border: 1px solid black;
+  padding: 3%;
+  text-align: center;
+}
+.home-imgs {
+  box-shadow: 20px 20px 5px solid black;
+  padding: 10%;
+}
+.home-img {
+  width: 500px;
+  height: 320px;
+  border: 5px solid seagreen;
+  border-radius: 5px;
+}
+.registerLink {
+  font-size: 28px;
+}
+
+/* -------------------- Login Page --------------------- */
+.floating-input {
+  min-width: 300px;
+}
+.login-btns {
+  display: flex;
+  flex-direction: column;
+}
+.loginBtn {
+  margin-bottom: 10%;
+  width: 100%;
+}
+.forgotLink {
+  color: rgb(119, 78, 34);
+ 
+}
+.forgotLink:hover {
+  color: seagreen;
+  text-decoration: underline;
+}
+
+/* ----------------- BookSearch CSS ----------------- */
+.searchResults {
+  margin-top: 5%;
+  width: 75%;
+}
+
+/* ----------------- ResultItem CSS ----------------- */
+.bookResult {
+  border: 1px solid black;
+  border-bottom: transparent;
+  display: flex;
+  flex-direction: row;
+  padding: 3%;
+  justify-content: space-between;
+  background-color: rgb(255, 255, 227);
+  /* background-color: rgb(252, 248, 215); */
+  
+}
+.bookResult:last-child {
+  border-bottom: 1px solid black;
+}
+.bookImg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bookInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2%;
+}
+.showForm-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.add-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.addBtn {
+  background-color: goldenrod;
+  width: 100px;
+  height: 50px;
+  font-weight: bold;
+}
+.desc-btn {
+  border: none;
+  background-color: transparent;
+  color: rgb(119, 78, 34);
+  font-weight: bold;
+}
+.desc-btn:hover {
+  color: seagreen;
+  text-decoration: underline;
+}
+.bookDesc {
+  background-color: linen;
+  background-color:		rgb(253, 253, 215);
+  /* background-color: 	rgb(251, 251, 218); */
+  background-color: rgb(253, 249, 216);
+  border: 1px solid black;
+  border-bottom: none;
+  padding: 2%;
+}
+
+/* ----------------- BookForm ----------------- */
+.bookForm {
+  background-color: rgb(253, 249, 216);
+  border: 1px solid black;
+  border-bottom: none;
+  /* padding: 3% 20% 3% 20%; */
+  padding: 3%;
+}
+.label-align {
+  width: 100%;
+  text-align: right;
+}
+@media screen and (max-width: 768px) {
+  .label-align {
+    width: 100%;
+    text-align:left;
+  }
+}
+.form-group {
+  margin-bottom: 10px;
+}
+input, select {
+  margin-bottom: 2px;
+}
+.small-input {
+  width: 35%;
+  display: inline-block;
+}
+.bookForm-btns {
+  display: flex;
+  justify-content: space-between;
+}
+.bookFormBtn {
+  margin-top: 2%;
+}
+
+/* ----------------- EditBook ----------------- */
+.editBook {
+  width: 75%;
+  /* background-color: rgb(253, 249, 216); */
+  background-color: rgb(255, 255, 227);
+  border: 1px solid black;
+  padding: 3%;
+  margin: 0;
+}
+.edit-h1 {
+  margin: 0;
+  padding-bottom: 5%;
+}
+.edit-rows {
+  min-width: 75%;
+  display: flex;
+  justify-content: center;
+}
+.align-right {
+  display: flex;
+  justify-content: end;
+}
+
+/* ---------------- BookList ------------------ */
+.booklist-title {
+  position: absolute;
+  top: 50px;
+  font-size: 50px;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.bookshelf-img {
+  height: 200px;
+  width: 50%;
+  position: absolute;
+  top: 0;
+  margin-bottom: 500px;
+}
+.booklist-heading {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.filter-bar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1%;
+}
+.filter-items {
+  width: 75%;
+  display: flex;
+  justify-content: space-around;
+}
+.filterButton {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid transparent;
+  font-weight: bold;
+  padding: 10%;
+}
+.filterButton:hover {
+  /* color:lightcoral;
+  border-bottom: 1px solid lightcoral; */
+  color: rgb(255, 179, 2);
+  /* color: rgb(82, 199, 119); */
+  /* border-bottom: 1px solid rgb(82, 199, 119); */
+  border-bottom: 1px solid rgb(255, 179, 2);
+}
+.filter-header {
+  width: 100%;
+  background-color: rgb(66, 146, 85, 0.5);
+  border: 1px solid rgb(85, 128, 13);
+  border-bottom: none;
+  display: flex;
+  justify-content: center;
+  padding: 1.5%;
+}
+.filter-h3 {
+  padding: 0;
+}
+.sortButton {
+  background: transparent;
+  border: none;
+  font-weight: bold;
+}
+.sortButton:hover{
+  color: rgb(255, 179, 2);
+}
+.bookCover {
+  max-width: 50px;
+}
+.bookTable {
+  border-color: rgb(149, 223, 21);
+  border-color: rgb(85, 128, 13);
+  /* border-color: rgb(245, 236, 134); */
+  /* background-color: rgb(255, 255, 227); */
+}
+.thead {
+  /* background-color: rgb(245, 245, 245, 0.3) !important; */
+  border-bottom: 2px solid rgb(85, 128, 13);
+}
+td {
+  vertical-align: middle;
+}
+.list-btn {
+  max-width: 40px; 
+}
+.details .col {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  text-align: left;
+}
+.border-right {
+  border-right: 1px solid rgb(85, 128, 13);
+}
+.vcenter {
+  display: flex;
+  align-items: center;
+}
+
+/* ----------------- Profile Page ----------------- */
+.profile {
+  display: flex;
+  width: 100%;
+  padding-left: 5%;
+  padding-right: 5%;
+  justify-content: center;
+}
+.profile-title {
+  position: absolute;
+  top: 18px;
+  font-size: 50px;
+  box-sizing: border-box;
+}
+.decor-img {
+  /* position: absolute; */
+  width: 100%;
+  max-height: 125px;
+  /* z-index: -1; */
+  padding: 0;
+  margin: 0;
+  /* transform: scaleY(-1); */
+}
+.col1 {
+  background-color: rgb(253, 249, 216);
+  /* background-color: rgb(255, 255, 227); */
+  min-width: 275px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: space-around; */
+  border: 1px solid black;
+  border-right: none;
+  padding: 2%;
+  
+}
+.profilePic {
+  margin-bottom: 21%;
+  min-height: 200px;
+  max-width: 275px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.userInfo {
+  margin-bottom: 5%;
+}
+.settings {
+  display: flex;
+  flex-direction: column;
+  padding: 5%;
+  width: 100%;
+}
+.settings-btn {
+  background-color: transparent;
+  border: none;
+  text-decoration: underline transparent;
+  font-weight: bold;
+  color: rgb(119, 78, 34);
+  margin-bottom: 7%;
+  padding-left: 20%;
+}
+.settings-btn:hover {
+  color: seagreen;
+  text-decoration: underline seagreen;
+}
+.settingsForm {
+  padding: 2% 0 5% 0;
+}
+@media screen and (max-width: 992px) {
+  .col1 {
+    border: 1px solid black;
+    border-bottom: none;
+  }
+  .settings-btn {
+    padding-left: 40%;
+  }
+}
+@media screen and (max-width: 800px) {
+  .profile {
+    padding: 0;
+    margin-top: 8%;
+  }
+  .decor-img {
+    display: none;
+  }
+  .table, .editBook {
+    margin-top: 10%;
+  }
+  .settings-btn {
+    padding-left: 35%;
+  }
+}
+.h-form {
+  display: flex;
+  padding-bottom: 3%;
+}
+.pr-label {
+  /* display: inline-block; */
+  font-weight: none !important;
+}
+.col2 {
+  min-width: 275px;
+  background-color: rgb(253, 249, 216);
+  /* background-color: rgb(255, 255, 227); */
+  display: flex;
+  flex-direction: column;
+  padding: 2%;
+  border: 1px solid black;
+}
+.stats-bar {
+  width: 100%;
+  height: 25px;
+  background-color: gray;
+  box-sizing: border-box;
+  display: flex;
+  margin-bottom: 3%;
+  justify-content: center;
+}
+.completed {
+  background-color: blue;
+}
+.reading {
+  background-color: green;
+}
+.planning {
+  background-color: indigo;
+}
+.holding {
+  background-color: orange;
+}
+.dropped {
+  background-color: brown;
+}
+.legend {
+  display: flex;
+  justify-content: space-evenly;
+  padding-left: 2%;
+}
+.legend-item {
+  display: flex;
+  align-items: baseline;
+}
+.legend-color {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+.statistics, .favBooks, .favAuthors {
+  min-height: 250px;
+}
+.favBooks {
+  padding-bottom: 1%;
+}
+.fave-images {
+  display: flex;
+  flex-wrap: wrap;
+}
+.fave-img {
+  padding-right: 3px;
+  width: 100px;
+}

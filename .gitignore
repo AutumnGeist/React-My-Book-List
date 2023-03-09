@@ -1,0 +1,5 @@
+node_modules
+.env
+instructions.txt
+loginData.txt
+requests.rest
