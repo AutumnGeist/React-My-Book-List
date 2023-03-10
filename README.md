@@ -13,7 +13,7 @@ Redux state-management \
 Axios and Express REST API \
 JWT authentication including protected routes and email password resets
 
-# Usage
+## Usage
 ```
  npm install
  cd frontend npm install
