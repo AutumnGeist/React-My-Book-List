@@ -1,0 +1,8 @@
+{
+  "short_name": "My Book List",
+  "name": "React-My-Book-List",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
