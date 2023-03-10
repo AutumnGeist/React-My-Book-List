@@ -1,4 +1,5 @@
 const express = require('express')
+const path = require('path')
 const dotenv = require('dotenv').config()
 const {errorHandler} = require('./middleware/errorMiddleware')
 const connectDB = require('./config/db')
@@ -16,6 +17,14 @@ app.use(express.urlencoded({extended: false}))
 app.use('/books', require('./routes/bookRoutes'))
 app.use('/users', require('./routes/userRoutes'))
 app.use('/search', require('./routes/searchRoutes'))
+
+//serve frontend (for deployment)
+if(process.env.NODE_ENV === 'production') {
+    app.use(express.static(path.join(__dirname, '../frontend/build')))
+    app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, '../', 'frontend', 'build', 'index.html')))
+} else {
+    app.get('/', (req, res) => res.send('Please set to production'))
+}
 
 //add error handler
 app.use(errorHandler)
